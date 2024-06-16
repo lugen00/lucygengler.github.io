@@ -1,0 +1,215 @@
+@font-face {
+  font-family:'Mitre_square';
+  src: url('fonts/Mitre_square/mitresqu_u-webfont.woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+#slider-container.left-side {
+  cursor: w-resize;
+}
+
+#slider-container.right-side {
+  cursor: e-resize;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: whitesmoke;
+}
+
+.menu {
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  font-family: Arial;
+  font-size: 0.8rem;
+  z-index: 1000; /* Ensure menu is above other elements */
+}
+
+.menu a {
+  color: black;
+  text-decoration: none;
+
+  display: inline-block;
+  width: 100px;
+  font-size: 0.8rem;
+  transition: transform 0.3s; /* Add a transition for smooth scaling */
+}
+
+.menu a:hover {
+  color: lightskyblue;
+  text-decoration: none;
+  transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+.menu a:nth-child(1) {
+  margin-right: 5rem; /* Increase the space after the first link */
+}
+
+.menu a:nth-child(5) {
+  margin-left: 5.65rem; /* Increase the space after the third link */
+}
+
+.menu a:nth-child(3) {
+  margin-left: 5rem; /* Increase the space after the third link */
+}
+
+#slider-container {
+  position: relative; /* Set the position to relative */
+  top: 45px; /* Adjust the top position to move it below the menu */
+  width: 100vw;
+  height: 95vh; /* Adjusted height to fill the viewport */
+  overflow: hidden;
+}
+
+
+.slider div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure each slide fills the height */
+}
+
+.slider img {
+  max-height: 95vh;
+  width: auto; /* Allow the width to adjust based on the image aspect ratio */
+  object-fit: contain; /* Ensure the entire image fits within the slide without distortion */
+ /* Add margin between images */
+ outline:none;
+}
+
+.slick-prev, .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.keen-slider__slide {
+  width: 100%; 
+  height: 100%; /* Ensure slides adjust based on their content (images) */
+  padding: 0; /* Remove any padding */
+}
+
+.keen-slider__slide img {
+  width:100%;
+  height: 100%;
+  display:block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  object-fit:contain;
+  outline:none;
+}
+
+#slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.keen-slider__slide {
+  flex: 0 0 auto; /* Ensure slides do not shrink */
+  width: auto; 
+
+  height: 100vh;/* Ensure slides adjust based on their content (images) */
+}
+
+
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev img, .slick-next img {
+  width: 50px;
+  height: 50px;
+}
+
+.overlay {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: whitesmoke; /* Overlay background color */
+  z-index: 9999; /* Sit on top */
+}
+
+.overlay-content {
+  position: relative; /* Use relative positioning within the overlay */
+  top: 1.6px;
+  left: 10px;
+  right: 10px; /* Add some margin for padding */
+}
+
+.overlay-content h1 {
+  text-align: left;
+  font-family: Arial;
+  font-size: 0.8rem;
+}
+
+.overlay-content p {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.overlay-content a {
+  color: black;
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.overlay-content a:hover {
+  color: lightskyblue;
+  transform: scale(1.05);
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+#close-overlay {
+  padding: 5px 7px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  right: 20px; /* Distance from the right edge */
+}
+
+#close-overlay:hover {
+  color: lightskyblue;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: normal;
+  position: fixed; /* Ensures it stays at the bottom of the viewport */
+  bottom: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  margin: 0; /* Reset margin if needed */
+}
+
+h1 {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 0.8rem;
+}
