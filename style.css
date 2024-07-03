@@ -62,27 +62,28 @@ body, html {
 }
 
 #slider-container {
-  position: relative; /* Set the position to relative */
-  top: 45px; /* Adjust the top position to move it below the menu */
+  position: relative;
+  top: 45px;
   width: 100vw;
-  height: 95vh; /* Adjusted height to fill the viewport */
+  height: 95vh;
   overflow: hidden;
 }
 
 
 .slider div {
   display: flex;
-  justify-content: center;
-  align-items: center;
+ /* justify-content: center;
+  align-items: center; */
   height: 100%; /* Ensure each slide fills the height */
 }
 
 .slider img {
   max-height: 95vh;
-  width: auto; /* Allow the width to adjust based on the image aspect ratio */
-  object-fit: contain; /* Ensure the entire image fits within the slide without distortion */
- /* Add margin between images */
+  /* Allow the width to adjust based on the image aspect ratio */
+  object-fit: contain;/* Ensure the entire image fits within the slide without distortion */
+margin: 0; /* Add margin between images */
  outline:none;
+
 }
 
 .slick-prev, .slick-next {
@@ -92,36 +93,42 @@ body, html {
   z-index: 1;
 }
 
+
 .keen-slider__slide {
-  width: 100%; 
-  height: 100%; /* Ensure slides adjust based on their content (images) */
-  padding: 0; /* Remove any padding */
+  flex: 0 0 auto;
+ /* Ensure each slide takes up 25% of the container for 4 slides per view */
+  height: 100%;
+
+  margin: 0;
+  min-width: auto !important;
+  max-width: auto !important;
+
 }
 
 .keen-slider__slide img {
-  width:100%;
   height: 100%;
-  display:block;
+  object-fit: contain;
   margin: 0;
-  padding: 0;
+  padding: 0.2rem;
   border: none;
-  object-fit:contain;
-  outline:none;
 }
 
-#slider {
+.slider {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  height: 100%;
 }
 
 .keen-slider__slide {
-  flex: 0 0 auto; /* Ensure slides do not shrink */
-  width: auto; 
-
-  height: 100vh;/* Ensure slides adjust based on their content (images) */
+  flex: 0 0 auto;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
+
+
+
 
 
 
@@ -134,7 +141,7 @@ body, html {
 }
 
 .slick-prev img, .slick-next img {
-  width: 50px;
+
   height: 50px;
 }
 
