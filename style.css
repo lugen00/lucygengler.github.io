@@ -11,16 +11,16 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: whitesmoke;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu {
   text-decoration: none;
-  position: absolute;
-  top: 10px;
-  left: 10px;
   cursor: pointer;
+  padding: 10px;
   font-family: Arial;
   font-size: 0.8rem;
   z-index: 1000; /* Ensure menu is above other elements */
@@ -78,14 +78,6 @@ html {
   width: auto !important;
 }
 
-.keen-slider img {
-  max-height: 95vh;
-  /* Allow the width to adjust based on the image aspect ratio */
-  object-fit: contain; /* Ensure the entire image fits within the slide without distortion */
-  margin: 0; /* Add margin between images */
-  outline: none;
-}
-
 .keen-slider__slide {
   flex: 0 0 auto;
   height: 100%;
@@ -99,7 +91,6 @@ html {
 .keen-slider__slide img {
   height: 100%;
   object-fit: contain;
-  padding: 0.5rem;
   border: none;
 }
 
