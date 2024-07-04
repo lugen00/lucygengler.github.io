@@ -169,3 +169,31 @@ h1 {
   font-weight: normal;
   font-size: 0.8rem;
 }
+
+@media screen and (max-width: 700px) {
+  body {
+    overflow: scroll;
+    height: auto;
+    height: max-content;
+  }
+
+  .keen-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: scroll;
+    min-height: initial;
+    height: initial;
+    max-height: initial;
+  }
+
+  .keen-slider > div {
+    /* width: 95vw;
+    max-width: 90vw; */
+  }
+  .keen-slider > div > img {
+    width: 95vw;
+    max-width: 90vw;
+    object-fit: contain;
+  }
+}

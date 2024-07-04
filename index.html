@@ -110,8 +110,6 @@
     </div>
 
     <!-- JS -->
-
-    <!-- JS -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -129,68 +127,50 @@
 
     <script>
       $(document).ready(function () {
-        var slider = new KeenSlider("#keen-slider", {
-          loop: true,
-          // speed: 400,
-          autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-          },
-          slides: {
-            perView: "auto",
-            spacing: 10, // Set spacing to 0 to remove gaps
-          },
+        if ($(window).width() > 700) {
+          var slider = new KeenSlider("#keen-slider", {
+            loop: true,
+            autoplay: {
+              delay: 2000,
+              disableOnInteraction: false,
+            },
+            slides: {
+              perView: "auto",
+              spacing: 10,
+            },
+          });
 
-          // breakpoints: {
-          //   "(max-width: 600px)": {
-          //     slidesPerView: 1,
-          //   },
-          //   "(max-width: 1024px)": {
-          //     slidesPerView: 2,
-          //   },
-          //   "(min-width: 1025px)": {
-          //     slidesPerView: 4,
-          //   },
-          // },
-        });
-      });
-      //   $(".keen-slider__slide").each(function () {
-      //     console.log(
-      //       $(this).css("min-width"),
-      //       $(this).css("max-width"),
-      //       $(this).css("transform")
-      //     );
-      //   });
+          $("#keen-slider-container").mousemove(function (event) {
+            var containerWidth = $(this).width();
+            var mouseX = event.pageX - $(this).offset().left;
 
-      $("#keen-slider-container").mousemove(function (event) {
-        var containerWidth = $(this).width();
-        var mouseX = event.pageX - $(this).offset().left;
+            if (mouseX < containerWidth / 2) {
+              $(this).removeClass("right-side").addClass("left-side");
+            } else {
+              $(this).removeClass("left-side").addClass("right-side");
+            }
+          });
 
-        if (mouseX < containerWidth / 2) {
-          $(this).removeClass("right-side").addClass("left-side");
-        } else {
-          $(this).removeClass("left-side").addClass("right-side");
+          $("#keen-slider-container").click(function (event) {
+            var containerWidth = $(this).width();
+            var clickX = event.pageX - $(this).offset().left;
+
+            if (clickX < containerWidth / 2) {
+              slider.prev(); // Slide left
+            } else {
+              slider.next(); // Slide right
+            }
+          });
+
+          $("#about-link").click(function (event) {
+            event.preventDefault();
+            $("#about-overlay").fadeIn();
+          });
+
+          $("#close-overlay").click(function () {
+            $("#about-overlay").fadeOut();
+          });
         }
-      });
-
-      $("#keen-slider-container").click(function (event) {
-        var containerWidth = $(this).width();
-        var clickX = event.pageX - $(this).offset().left;
-
-        if (clickX < containerWidth / 2) {
-          slider.prev(); // Slide left
-        } else {
-          slider.next(); // Slide right
-        }
-      });
-
-      $("#about-link").click(function (event) {
-        event.preventDefault();
-        $("#about-overlay").fadeIn();
-      });
-
-      $("#close-overlay").click(function () {
-        $("#about-overlay").fadeOut();
       });
     </script>
   </body>
