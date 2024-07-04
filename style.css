@@ -1,20 +1,13 @@
 @font-face {
-  font-family:'Mitre_square';
-  src: url('fonts/Mitre_square/mitresqu_u-webfont.woff');
+  font-family: "Mitre_square";
+  src: url("fonts/Mitre_square/mitresqu_u-webfont.woff");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-#slider-container.left-side {
-  cursor: w-resize;
-}
-
-#slider-container.right-side {
-  cursor: e-resize;
-}
-
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -61,88 +54,53 @@ body, html {
   margin-left: 5rem; /* Increase the space after the third link */
 }
 
-#slider-container {
-  position: relative;
-  top: 45px;
-  width: 100vw;
-  height: 95vh;
-  overflow: hidden;
+/* .keen-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+} */
+
+#keen-slider-container.left-side {
+  cursor: w-resize;
 }
 
+#keen-slider-container.right-side {
+  cursor: e-resize;
+}
 
-.slider div {
-  display: flex;
- /* justify-content: center;
+.keen-slider div {
+  /* display: flex;
+  margin-top: 2.5rem; */
+  /* justify-content: center;
   align-items: center; */
   height: 100%; /* Ensure each slide fills the height */
+  width: auto !important;
 }
 
-.slider img {
+.keen-slider img {
   max-height: 95vh;
   /* Allow the width to adjust based on the image aspect ratio */
-  object-fit: contain;/* Ensure the entire image fits within the slide without distortion */
-margin: 0; /* Add margin between images */
- outline:none;
-
+  object-fit: contain; /* Ensure the entire image fits within the slide without distortion */
+  margin: 0; /* Add margin between images */
+  outline: none;
 }
-
-.slick-prev, .slick-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
 
 .keen-slider__slide {
   flex: 0 0 auto;
- /* Ensure each slide takes up 25% of the container for 4 slides per view */
   height: 100%;
-
   margin: 0;
   min-width: auto !important;
   max-width: auto !important;
-
+  padding: 0;
+  margin-bottom: 0.5rem;
 }
 
 .keen-slider__slide img {
   height: 100%;
   object-fit: contain;
-  margin: 0;
-  padding: 0.2rem;
+  padding: 0.5rem;
   border: none;
-}
-
-.slider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.keen-slider__slide {
-  flex: 0 0 auto;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-
-
-
-
-
-.slick-prev {
-  left: 10px;
-}
-
-.slick-next {
-  right: 10px;
-}
-
-.slick-prev img, .slick-next img {
-
-  height: 50px;
 }
 
 .overlay {
