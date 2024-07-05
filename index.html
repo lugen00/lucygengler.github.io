@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="images/scissors.png" />
+    <link rel="icon" href="images/file_cabinet.png" />
     <title>Lucy Gengler</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,35 +20,31 @@
   </head>
   <body>
     <div class="menu">
-      <a href="index.html">Lucy Gengler</a>
-      <a href="#" id="about-link">About</a>
-      <a href="https://www.instagram.com/lucy.gengler" target="_blank"
-        >Instagram</a
-      >
-      <br />Graphic Design
-      <a href="mailto:hello@lucygengler.com">Contact</a>
+      <a href="#" id="about-link">Lucy Gengler</a>
     </div>
     <div id="about-overlay" class="overlay">
       <div class="overlay-content">
-        <h1>Lucy Gengler</h1>
+        <a>Lucy Gengler</a>
         <p>
-          ▄▀▄▀▄｡･:*:･ﾟ★,｡･:*:･ﾟ☆ ▄▀▄▀▄<br />
           Graphic designer from Luxembourg,<br />currently based in the Hague
           (NL) <br />
           <br /><br />
-          <a href="mailto:hello@lucygengler.com">hello@lucygengler.com</a>
+          ▄▀▄▀▄▀▄▀▄<br />
           <br />
+          Contact <br />
+          <a href="mailto:hello@lucygengler.com">hello@lucygengler.com</a>
           <a href="https://www.instagram.com/lucyg3ngler" target="_blank"
             >Instagram</a
           ><br />
           <br /><br />
+          ▄▀▄▀▄▀▄▀▄<br />
+          <br />
           Education <br />
-          – BA Graphic design, Royal Academy of Art, The Hague (NL), 2024<br />
-          – Internship Zweifel (DE), 2023<br />
-          – Internship Kousca (LU), 2019
+          BA Graphic design, Royal Academy of Art, The Hague (NL), 2024<br />
+          Internship Zweifel (DE), 2023<br />
+          Internship Kousca (LU), 2019
         </p>
         <h2>© Lucy Gengler, 2024</h2>
-        <button id="close-overlay">back</button>
       </div>
     </div>
 
@@ -165,13 +161,26 @@
           });
         }
 
+        var overlayVisible = false; // Track overlay visibility
+
         $("#about-link").click(function (event) {
           event.preventDefault();
-          $("#about-overlay").fadeIn();
+
+          if (!overlayVisible) {
+            $("#about-overlay").fadeIn();
+            overlayVisible = true;
+          } else {
+            $("#about-overlay").fadeOut();
+            overlayVisible = false;
+          }
         });
 
-        $("#close-overlay").click(function () {
-          $("#about-overlay").fadeOut();
+        // Close overlay when clicking outside the content
+        $("#about-overlay").click(function (event) {
+          if (event.target === this) {
+            $(this).fadeOut();
+            overlayVisible = false;
+          }
         });
       });
     </script>

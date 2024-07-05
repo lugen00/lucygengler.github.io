@@ -29,29 +29,18 @@ html {
 .menu a {
   color: black;
   text-decoration: none;
-
-  display: inline-block;
-  width: 100px;
-  font-size: 0.8rem;
-  transition: transform 0.3s; /* Add a transition for smooth scaling */
+  display: block;
+  padding: 0px 30px; /* Adjust padding to increase the size of the black box */
+  border-radius: 2px; /* Rounded corners for the black box */
+  text-align: left;
 }
 
 .menu a:hover {
-  color: lightskyblue;
+  text-align: left;
+  color: whitesmoke;
+  background-color: black;
   text-decoration: none;
-  transform: scale(1.05); /* Scale up slightly on hover */
-}
-
-.menu a:nth-child(1) {
-  margin-right: 5rem; /* Increase the space after the first link */
-}
-
-.menu a:nth-child(5) {
-  margin-left: 5.65rem; /* Increase the space after the third link */
-}
-
-.menu a:nth-child(3) {
-  margin-left: 5rem; /* Increase the space after the third link */
+  padding: 0px 30px; /* Increase padding on hover for a larger black box */
 }
 
 /* .keen-slider {
@@ -108,45 +97,45 @@ html {
 
 .overlay-content {
   position: relative; /* Use relative positioning within the overlay */
-  top: 1.6px;
-  left: 10px;
-  right: 10px; /* Add some margin for padding */
-}
-
-.overlay-content h1 {
-  text-align: left;
-  font-family: Arial;
-  font-size: 0.8rem;
-}
-
-.overlay-content p {
-  font-size: 0.8rem;
-  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .overlay-content a {
   color: black;
+  padding: 0px 30px;
+  border-radius: 2px;
+  text-align: left;
+  font-family: Arial;
+  font-size: 0.8rem; /* Adjust padding to increase the size of the black box */
+  border-radius: 2px;
+  display: block;
   text-decoration: none;
+}
+
+.overlay-content p {
   font-size: 0.8rem;
-  margin-bottom: 20px;
 }
 
 .overlay-content a:hover {
-  color: lightskyblue;
-  transform: scale(1.05);
+  padding: 0px 30px; /* Adjust padding to increase the size of the black box */
+  border-radius: 2px;
+  background-color: black;
+  color: whitesmoke;
+  text-align: left;
   font-size: 0.8rem;
-  margin-bottom: 20px;
 }
 
 #close-overlay {
-  padding: 5px 7px;
   cursor: pointer;
   font-size: 0.8rem;
-  right: 20px; /* Distance from the right edge */
+  /* Distance from the right edge */
 }
 
 #close-overlay:hover {
-  color: lightskyblue;
+  /* Adjust padding to increase the size of the black box */
+  border-radius: 2px;
+  background-color: black;
+  color: whitesmoke;
 }
 
 p {
@@ -155,6 +144,7 @@ p {
 }
 
 h2 {
+  padding: 0px 30px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8rem;
   font-weight: normal;
@@ -168,32 +158,32 @@ h1 {
   font-family: Arial;
   font-weight: normal;
   font-size: 0.8rem;
+  /* Adjust padding to increase the size of the black box */
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 700px) {
   body {
-    overflow: scroll;
-    height: auto;
-    height: max-content;
+    overflow: auto; /* Allow vertical scrolling */
+    height: auto; /* Let content determine height */
   }
 
   .keen-slider {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    overflow: scroll;
-    min-height: initial;
-    height: initial;
-    max-height: initial;
+    overflow: auto; /* Enable scrolling within the slider */
+    max-height: calc(100vh - 80px); /* Adjust as needed based on your layout */
   }
 
   .keen-slider > div {
-    /* width: 95vw;
-    max-width: 90vw; */
-  }
-  .keen-slider > div > img {
-    width: 95vw;
+    width: 95vw; /* Adjust slider width for smaller screens */
     max-width: 90vw;
+  }
+
+  .keen-slider > div > img {
+    width: 100%; /* Ensure images take full width of the slider */
+    height: auto; /* Maintain aspect ratio */
     object-fit: contain;
   }
 }
