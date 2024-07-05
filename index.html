@@ -127,7 +127,9 @@
 
     <script>
       $(document).ready(function () {
-        if ($(window).width() > 700) {
+        var isMobile = $(window).width() <= 700;
+
+        if (!isMobile) {
           var slider = new KeenSlider("#keen-slider", {
             loop: true,
             autoplay: {
@@ -140,7 +142,7 @@
             },
           });
 
-          $("#keen-slider-container").mousemove(function (event) {
+          $("#keen-slider").mousemove(function (event) {
             var containerWidth = $(this).width();
             var mouseX = event.pageX - $(this).offset().left;
 
@@ -151,7 +153,7 @@
             }
           });
 
-          $("#keen-slider-container").click(function (event) {
+          $("#keen-slider").click(function (event) {
             var containerWidth = $(this).width();
             var clickX = event.pageX - $(this).offset().left;
 
@@ -161,16 +163,16 @@
               slider.next(); // Slide right
             }
           });
-
-          $("#about-link").click(function (event) {
-            event.preventDefault();
-            $("#about-overlay").fadeIn();
-          });
-
-          $("#close-overlay").click(function () {
-            $("#about-overlay").fadeOut();
-          });
         }
+
+        $("#about-link").click(function (event) {
+          event.preventDefault();
+          $("#about-overlay").fadeIn();
+        });
+
+        $("#close-overlay").click(function () {
+          $("#about-overlay").fadeOut();
+        });
       });
     </script>
   </body>

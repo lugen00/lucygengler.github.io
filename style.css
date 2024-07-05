@@ -61,11 +61,11 @@ html {
   height: 100%;
 } */
 
-#keen-slider-container.left-side {
+#keen-slider.left-side {
   cursor: w-resize;
 }
 
-#keen-slider-container.right-side {
+#keen-slider.right-side {
   cursor: e-resize;
 }
 
