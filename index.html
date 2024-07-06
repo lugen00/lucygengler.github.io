@@ -122,6 +122,10 @@
     <script src="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.js"></script>
 
     <script>
+      const slider = new KeenSlider(".keen-slider", {
+        loop: true, // Enable looping
+        // other options...
+      });
       $(document).ready(function () {
         var isMobile = $(window).width() <= 700;
         if (!isMobile) {
