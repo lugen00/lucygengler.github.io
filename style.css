@@ -163,7 +163,8 @@ h1 {
 }
 
 @media screen and (max-width: 700px) {
-  body {
+  body,
+  html {
     overflow: auto; /* Allow vertical scrolling */
     height: auto; /* Let content determine height */
   }
@@ -173,15 +174,20 @@ h1 {
     flex-direction: column;
     gap: 10px;
     overflow: auto; /* Enable scrolling within the slider */
-    max-height: calc(100vh - 80px); /* Adjust as needed based on your layout */
+    max-height: none; /* Remove fixed height */
   }
 
   .keen-slider > div {
+    height: auto; /* Allow slides to adjust height automatically */
     width: 95vw; /* Adjust slider width for smaller screens */
     max-width: 90vw;
   }
 
-  .keen-slider > div > img {
+  .keen-slider__slide {
+    height: auto; /* Allow slides to adjust height automatically */
+  }
+
+  .keen-slider__slide img {
     width: 100%; /* Ensure images take full width of the slider */
     height: auto; /* Maintain aspect ratio */
     object-fit: contain;
