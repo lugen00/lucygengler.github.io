@@ -24,7 +24,7 @@
     </div>
     <div id="about-overlay" class="overlay">
       <div class="overlay-content">
-        <a>Lucy Gengler</a>
+        <a href="#" id="close-overlay-link">Lucy Gengler</a>
         <p>
           Graphic designer from Luxembourg,<br />currently based in the Hague
           (NL) <br />
@@ -124,7 +124,6 @@
     <script>
       $(document).ready(function () {
         var isMobile = $(window).width() <= 700;
-
         if (!isMobile) {
           var slider = new KeenSlider("#keen-slider", {
             loop: true,
@@ -141,7 +140,6 @@
           $("#keen-slider").mousemove(function (event) {
             var containerWidth = $(this).width();
             var mouseX = event.pageX - $(this).offset().left;
-
             if (mouseX < containerWidth / 2) {
               $(this).removeClass("right-side").addClass("left-side");
             } else {
@@ -152,7 +150,6 @@
           $("#keen-slider").click(function (event) {
             var containerWidth = $(this).width();
             var clickX = event.pageX - $(this).offset().left;
-
             if (clickX < containerWidth / 2) {
               slider.prev(); // Slide left
             } else {
@@ -165,7 +162,6 @@
 
         $("#about-link").click(function (event) {
           event.preventDefault();
-
           if (!overlayVisible) {
             $("#about-overlay").fadeIn();
             overlayVisible = true;
@@ -175,12 +171,11 @@
           }
         });
 
-        // Close overlay when clicking outside the content
-        $("#about-overlay").click(function (event) {
-          if (event.target === this) {
-            $(this).fadeOut();
-            overlayVisible = false;
-          }
+        // Close overlay when "Lucy Gengler" in the overlay is clicked
+        $("#close-overlay-link").click(function (event) {
+          event.preventDefault();
+          $("#about-overlay").fadeOut();
+          overlayVisible = false;
         });
       });
     </script>
