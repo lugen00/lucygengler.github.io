@@ -172,24 +172,24 @@ h1 {
   .keen-slider {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1px; /* Reduced spacing between slides */
     overflow: auto; /* Enable scrolling within the slider */
     max-height: none; /* Remove fixed height */
   }
 
   .keen-slider > div {
     height: auto; /* Allow slides to adjust height automatically */
-    width: 95vw; /* Adjust slider width for smaller screens */
+    width: 100vw; /* Adjust slider width for smaller screens */
     max-width: 90vw;
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Center the images vertically */
   }
 
-  .keen-slider__slide {
-    height: auto; /* Allow slides to adjust height automatically */
-  }
-
-  .keen-slider__slide img {
+  .keen-slider > div > img {
     width: 100%; /* Ensure images take full width of the slider */
     height: auto; /* Maintain aspect ratio */
     object-fit: contain;
+    display: block;
   }
 }
