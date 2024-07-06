@@ -112,6 +112,12 @@ html {
   text-decoration: none;
 }
 
+.overlay-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 .overlay-content p {
   font-size: 0.8rem;
 }

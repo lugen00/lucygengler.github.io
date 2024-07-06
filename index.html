@@ -157,18 +157,18 @@
         }
 
         var overlayVisible = false; // Track overlay visibility
-
         $("#about-link").click(function (event) {
           event.preventDefault();
           if (!overlayVisible) {
             $("#about-overlay").fadeIn();
             overlayVisible = true;
+            $("body").addClass("overlay-open"); // Add class to disable scrolling
           } else {
             $("#about-overlay").fadeOut();
             overlayVisible = false;
+            $("body").removeClass("overlay-open"); // Remove class to enable scrolling
           }
         });
-
         // Close overlay when "Lucy Gengler" in the overlay is clicked
         $("#close-overlay-link").click(function (event) {
           event.preventDefault();
