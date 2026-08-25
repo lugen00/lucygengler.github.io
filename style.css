@@ -449,6 +449,9 @@ main {
     top: 1rem;
   }
 
+    body {
+    font-size: 0.9rem;
+  }
   .project,
   .footer {
     padding-left: 1rem;
