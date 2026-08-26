@@ -449,6 +449,23 @@ main {
     top: 1rem;
   }
 
+  .about-section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 3rem 1rem 1rem;
+  }
+
+  .about-content p {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
 
   .project,
   .footer {
