@@ -185,6 +185,7 @@ main {
 /* PROJECT IMAGE GALLERIES */
 
 .project-gallery {
+   touch-action: manipulation;
   position: relative;
   display: block;
   width: fit-content;
@@ -238,6 +239,7 @@ main {
 
   appearance: none;
   -webkit-appearance: none;
+   touch-action: manipulation;
 }
 
 /* LEFT = PREVIOUS */
