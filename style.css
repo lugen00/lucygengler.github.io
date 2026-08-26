@@ -479,12 +479,14 @@ main {
   min-width: 0;
   overflow-wrap: break-word;
 }
+.project {
+  padding: 0.5rem 1rem 2rem;
+}
 
-  .project,
-  .footer {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+.footer {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
   .project-gallery {
     width: 100%;
