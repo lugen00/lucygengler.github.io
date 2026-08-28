@@ -32,10 +32,7 @@ function openAbout() {
 function closeAboutSection() {
   gsap.to(aboutSection, {
     maxHeight: 0,
-    behavior: "smooth",
-
     duration: 0.5,
-
     ease: "power3.inOut",
 
     onComplete: () => {
@@ -77,8 +74,41 @@ const projectButtons = document.querySelectorAll(".project-button");
 projectButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const info = button.nextElementSibling;
+    const isOpen = info.classList.contains("open");
 
-    info.classList.toggle("open");
+    if (isOpen) {
+      // CLOSE
+      gsap.to(info, {
+        maxHeight: 0,
+        duration: 0.5,
+        ease: "power3.inOut",
+
+        onComplete: () => {
+          info.classList.remove("open");
+          ScrollTrigger.refresh();
+        },
+      });
+
+    } else {
+      // OPEN
+      info.classList.add("open");
+
+      gsap.fromTo(
+        info,
+        {
+          maxHeight: 0,
+        },
+        {
+          maxHeight: info.scrollHeight,
+          duration: 0.8,
+          ease: "power3.inOut",
+
+          onComplete: () => {
+            ScrollTrigger.refresh();
+          },
+        }
+      );
+    }
   });
 });
 
