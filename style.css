@@ -292,7 +292,6 @@ main {
   font-family: "sirenne-six-mvb", serif;
   font-weight: 400;
   font-style: normal;
-  text-indent: 4rem;
 }
 
 .project-button h2:hover {
@@ -327,7 +326,6 @@ main {
   font-size: 1rem;
   line-height: 1.3;
   font-family: "sirenne-six-mvb", serif;
-  text-indent: 1.5rem;
 }
 /*
 .project-info p:first-child {
