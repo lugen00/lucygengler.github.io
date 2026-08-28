@@ -77,10 +77,10 @@ projectButtons.forEach((button) => {
     const isOpen = info.classList.contains("open");
 
     if (isOpen) {
-      // CLOSE — same as About
+      // CLOSE
       gsap.to(info, {
         maxHeight: 0,
-        duration: 0.5,
+        duration: 0.45,
         ease: "power3.inOut",
 
         onComplete: () => {
@@ -90,12 +90,12 @@ projectButtons.forEach((button) => {
       });
 
     } else {
-      // OPEN — same as About
+      // OPEN
       info.classList.add("open");
 
       gsap.to(info, {
         maxHeight: info.scrollHeight,
-        duration: 0.8,
+        duration: 0.65,
         ease: "power3.inOut",
 
         onComplete: () => {
