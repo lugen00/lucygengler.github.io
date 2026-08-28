@@ -316,11 +316,9 @@ main {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.7s ease;
 }
 
 .project-info.open {
-  max-height: 25rem;
   opacity: 1;
 }
 
@@ -330,11 +328,11 @@ main {
   font-family: "sirenne-six-mvb", serif;
   text-indent: 1.5rem;
 }
-
+/*
 .project-info p:first-child {
   text-indent: 1.5rem;
 }
-
+*/
 /* FOOTER */
 
 .blog-link {
